@@ -37,7 +37,9 @@ class App extends Component {
       number,
     };
 
-    contacts.some((contact) => contact.name === newContact.name)
+    contacts.some(
+      (contact) => contact.name.toLowerCase() === newContact.name.toLowerCase()
+    )
       ? alert(`${newContact.name} is already in contacts`)
       : this.setState({
           contacts: [newContact, ...contacts],
